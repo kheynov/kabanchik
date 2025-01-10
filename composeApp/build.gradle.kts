@@ -1,3 +1,4 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -36,6 +37,7 @@ kotlin {
         androidMain.dependencies {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
+            implementation(libs.yandex.auth.sdk)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -65,6 +67,8 @@ android {
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1
         versionName = "1.0"
+        manifestPlaceholders["YANDEX_CLIENT_ID"] =
+            gradleLocalProperties(rootDir, providers).getProperty("YANDEX_CLIENT_ID")
     }
     packaging {
         resources {

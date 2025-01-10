@@ -1,0 +1,9 @@
+{
+  "version": "1",
+  "name": "kabanchik",
+  "type": "collection",
+  "ignore": [
+    "node_modules",
+    ".git"
+  ]
+}
