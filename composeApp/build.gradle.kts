@@ -28,6 +28,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             implementation(libs.yandex.auth.sdk)
             implementation(libs.androidx.activity)
+            implementation(libs.koin.android)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -39,6 +40,9 @@ kotlin {
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
             implementation(projects.shared)
+            implementation(libs.koin.core)
+            implementation(libs.voyager.koin)
+            implementation(libs.voyager.navigator)
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
